@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.4
+---
+
+- Add the interface to bind
+
+
 0.3
 ---
 

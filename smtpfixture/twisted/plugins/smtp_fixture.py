@@ -21,6 +21,7 @@ class Options(usage.Options):
     Config parser for the twisted plugin.
     """
     optParameters = [['port', 'p', 8025, 'Port to listen'],
+                     ['interface', 'i', '0.0.0.0', 'Interface to listen'],
                      ['maildir', 'm', '~/Maildir',
                       'Directory where mail will be stored or '
                       '/dev/null for blackhole usage']
@@ -50,6 +51,7 @@ class SmtpFixtureServiceMaker(object):
         from smtpfixture.smtp import SmtpFactory
         maildir = os.path.expanduser(options['maildir'])
         return internet.TCPServer(int(options['port']),
-                                  SmtpFactory(maildir=maildir))
+                                  SmtpFactory(maildir=maildir),
+                                  interface=options['interface'])
 
 serviceMaker = SmtpFixtureServiceMaker()
