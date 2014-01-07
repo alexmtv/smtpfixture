@@ -1,6 +1,10 @@
 import os.path
 
-__version__ = '0.2'
+__version__ = '0.3'
+
+
+def get_installdir():
+    return os.path.dirname(__file__)
 
 
 def installdir():
@@ -10,4 +14,5 @@ def installdir():
     to start the `twistd`` daemon using an extra plugin.
 
     """
-    print(os.path.dirname(__file__))
+    print(get_installdir())
+
