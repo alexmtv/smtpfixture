@@ -3,3 +3,6 @@
 /build
 /dist
 dropin.cache
+.pydevproject
+.project
+venv*
